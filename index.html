@@ -4,15 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Advanced Weather App</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <nav class="navbar">
     <div class="nav-brand">WeatherApp</div>
     <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Forecast</a></li>
-      <li><a href="#">About</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#forecast">Forecast</a></li>
+      <li><a href="#about">About</a></li>
     </ul>
     <button class="nav-btn">Sign up →</button>
   </nav>
@@ -20,28 +23,37 @@
   <div class="container">
     <h1>🌤️ Weather App</h1>
     <div class="input-group">
-      <input id="cityInput" placeholder="Enter city name..." />
-      <button id="searchBtn">Search</button>
-      <button id="locateBtn">📍</button>
-    </div>
-    <div id="loader" class="loader hidden"></div>
-    <div class="card-section">
-      <div id="weatherCard" class="weather-card gradient-card hidden">
-        <span class="tag">#one</span>
-        <h2 id="cityName"></h2>
-        <img id="weatherIcon" alt="Weather Icon" />
-        <p id="description"></p>
-        <p><strong>Temp:</strong> <span id="temp"></span>°C</p>
-        <p><strong>Feels like:</strong> <span id="feels_like"></span>°C</p>
-        <p><strong>Humidity:</strong> <span id="humidity"></span>%</p>
-        <p><strong>Wind:</strong> <span id="wind"></span> km/h</p>
-        <p><strong>Sunrise:</strong> <span id="sunrise"></span></p>
-        <p><strong>Sunset:</strong> <span id="sunset"></span></p>
+      <div class="input-container">
+        <input id="cityInput" placeholder="Enter city name..." autocomplete="off" />
+      </div>
+      <div class="btn-group">
+        <button id="searchBtn">🔍 Search</button>
+        <button id="locateBtn" title="Use current location">📍</button>
       </div>
     </div>
-    <p id="error" class="error"></p>
+    
+    <div id="loader" class="loader hidden"></div>
+    
+    <div class="card-section">
+      <div id="weatherCard" class="weather-card hidden">
+        <span class="tag">#live</span>
+        <h2 id="cityName"></h2>
+        <img id="weatherIcon" alt="Weather Icon" />
+        <div class="weather-description" id="description"></div>
+        <div class="weather-info">
+          <p><strong>Temperature:</strong> <span id="temp"></span>°C</p>
+          <p><strong>Feels like:</strong> <span id="feels_like"></span>°C</p>
+          <p><strong>Humidity:</strong> <span id="humidity"></span>%</p>
+          <p><strong>Wind Speed:</strong> <span id="wind"></span> km/h</p>
+          <p><strong>Sunrise:</strong> <span id="sunrise"></span></p>
+          <p><strong>Sunset:</strong> <span id="sunset"></span></p>
+        </div>
+      </div>
+    </div>
+    
+    <div id="error" class="error"></div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
