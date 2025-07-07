@@ -3,18 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Weather App</title>
+  <title>Advanced Weather App</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Weather App</h1>
-    <input type="text" id="cityInput" placeholder="Enter city name" />
-    <button onclick="getWeather()">Get Weather</button>
-
-    <div id="weatherInfo" class="weather-box">
-      <!-- Weather data will be displayed here -->
+    <h1>🌤️ Weather App</h1>
+    <div class="input-group">
+      <input type="text" id="cityInput" placeholder="Enter city name..." />
+      <button id="searchBtn">Search</button>
+      <button id="locateBtn">📍</button>
     </div>
+
+    <div id="weatherCard" class="weather-card hidden">
+      <h2 id="cityName"></h2>
+      <img id="weatherIcon" src="" alt="" />
+      <p id="description"></p>
+      <p><strong>Temp:</strong> <span id="temp"></span>°C</p>
+      <p><strong>Feels like:</strong> <span id="feels_like"></span>°C</p>
+      <p><strong>Humidity:</strong> <span id="humidity"></span>%</p>
+      <p><strong>Wind:</strong> <span id="wind"></span> km/h</p>
+      <p><strong>Sunrise:</strong> <span id="sunrise"></span></p>
+      <p><strong>Sunset:</strong> <span id="sunset"></span></p>
+    </div>
+
+    <p id="error" class="error"></p>
   </div>
 
   <script src="script.js"></script>
